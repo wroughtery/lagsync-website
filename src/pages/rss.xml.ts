@@ -4,6 +4,13 @@ const SITE = 'https://lagsync.com';
 
 const items = [
   {
+    title: 'LagSync 1.3.0 Released',
+    link: `${SITE}/releases#v130`,
+    pubDate: 'Wed, 05 Aug 2026 00:00:00 GMT',
+    description:
+      'Live now on Firefox (other stores rolling out): access is now limited to 19 video sites instead of all websites, with opt-in per site elsewhere. Fixes a YouTube freeze, a Firefox frame-rate/quality drop on YouTube and Vimeo, and a Firefox Twitch live-delay regression.'
+  },
+  {
     title: 'LagSync 1.2.2 Released',
     link: `${SITE}/releases#v122`,
     pubDate: 'Thu, 28 May 2026 00:00:00 GMT',
@@ -40,7 +47,7 @@ export const GET: APIRoute = () => {
     `  <link>${SITE}/releases</link>\n` +
     `  <description>Release and changelog updates for LagSync.</description>\n` +
     `  <language>en-us</language>\n` +
-      `  <lastBuildDate>Thu, 28 May 2026 00:00:00 GMT</lastBuildDate>\n` +
+      `  <lastBuildDate>Wed, 05 Aug 2026 00:00:00 GMT</lastBuildDate>\n` +
     items
       .map(
         (item) =>

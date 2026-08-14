@@ -12,35 +12,38 @@ export const SITE = {
 
 export const VERSION = '1.2.2';
 
+// Per-store versions can lag behind each other while a release rolls out
+// (store review times differ). Keep each entry's version accurate to what
+// is actually live on that store — do not assume every store is in sync.
 export const BROWSERS = [
   {
     name: 'Chrome',
     icon: '/browsers/chrome.svg',
-    note: `v${VERSION} — Live`,
+    note: `v1.2.2 — Live`,
     link: 'https://chromewebstore.google.com/detail/lagsync-bluetooth-audio-f/ijhhkocgkagcfkoinilkjdcadljdjmaf',
   },
   {
     name: 'Firefox',
     icon: '/browsers/firefox.svg',
-    note: `v${VERSION} — Live`,
+    note: `v1.3.0 — Live`,
     link: 'https://addons.mozilla.org/en-US/firefox/addon/lagsync-bluetooth-audio-fix/',
   },
   {
     name: 'Edge',
     icon: '/browsers/edge.svg',
-    note: `v${VERSION} — Live`,
+    note: `v1.2.2 — Live`,
     link: 'https://microsoftedge.microsoft.com/addons/detail/lagsync-bluetooth-audio/ocigopodjjobggdnklngfaceeedlkbol',
   },
   {
     name: 'Safari',
     icon: '/browsers/safari.svg',
-    note: `v${VERSION} — Live`,
+    note: `v1.2.2 — Live`,
     link: 'https://apps.apple.com/app/id6766511020',
   },
   {
     name: 'Brave',
     icon: '/browsers/brave.svg',
-    note: `v${VERSION} — Live`,
+    note: `v1.2.2 — Live`,
     link: 'https://chromewebstore.google.com/detail/lagsync-bluetooth-audio-f/ijhhkocgkagcfkoinilkjdcadljdjmaf',
   },
 ];

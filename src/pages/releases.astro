@@ -13,6 +13,41 @@ import Footer from '../components/Footer.astro';
       <p class="text-slate-400 mb-12">Full changelog for all public versions. New entries will be added here as releases roll out.</p>
 
       <div class="space-y-8">
+        <section class="p-8 bg-[#111] border border-cyan-500/30 rounded-2xl">
+          <div id="v130" class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+            <h2 class="text-2xl text-white font-bold font-['Space_Mono']">1.3.0</h2>
+            <span class="text-xs text-slate-400 font-['Space_Mono'] uppercase tracking-widest">2026-08-05</span>
+          </div>
+          <p class="text-xs text-cyan-400 font-['Space_Mono'] uppercase tracking-widest mb-6">Live now on Firefox. Chrome, Edge, Safari, and Brave update automatically once their store review finishes.</p>
+
+          <h3 class="text-lg text-white font-semibold font-['Space_Mono'] mt-2 mb-3">Permissions and privacy</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-300 text-sm leading-relaxed">
+            <li>Change: LagSync no longer asks for access to every website. It now ships with access to 19 video sites (YouTube, Netflix, Twitch, Vimeo, Disney+, Prime Video, Hulu, Max, and more), and anything else is yours to allow, one site at a time.</li>
+            <li>Feature: New "Site access" section in Settings. Add a site to allow it, remove it to revoke it, and see the full built-in list. There is still an "Allow on all sites" switch if you'd rather not think about it — it's off by default.</li>
+            <li>Feature: Open the popup on a site LagSync doesn't cover and it offers to enable that one site, then reloads the page for you. LagSync has to be in place before the video starts loading, so a reload is genuinely required.</li>
+            <li>Change: Removed the <code class="text-cyan-400">tabs</code> permission. Added <code class="text-cyan-400">scripting</code> (this is what makes per-site access possible) and <code class="text-cyan-400">activeTab</code> (so the popup can tell you which site you're on). Neither shows an install warning.</li>
+            <li>Note: If you're upgrading, your existing access is kept so nothing stops working. You can narrow it whenever you like from Settings &rarr; Site access.</li>
+          </ul>
+
+          <h3 class="text-lg text-white font-semibold font-['Space_Mono'] mt-6 mb-3">Playback</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-300 text-sm leading-relaxed">
+            <li>Fix: YouTube no longer freezes mid-video with a full buffer and refuses to recover until you reload the page.</li>
+            <li>Fix: Video quality and frame rate no longer drop on YouTube and Vimeo. LagSync was discarding buffered video to apply delay changes sooner, which those players read as a bad connection and answered by dropping resolution. It no longer does that on video-on-demand. Twitch and other live streams still trim, where it's necessary.</li>
+            <li>Fix (Firefox, Edge, Safari): Regular videos no longer get routed through the frame-capture path meant for live streams — on Firefox this was visibly softer and pinned YouTube playback to roughly 13 fps; it now runs at the normal ~30 fps. Live streams are unaffected; they still use frame capture, which is the only thing that works for them.</li>
+            <li>Fix (Firefox): Twitch live streams keep their delay. Twitch's player on Firefox reports a live stream as a finite "video" with an absurd length (about 292,000 years), which the fix above initially mistook for an ordinary video. Durations no real video can have are now treated as the live signal they are. Verified on live channels against the exact failure.</li>
+            <li>Improvement: When frame capture <em>is</em> the right path, frames are now captured at the size they're actually shown at instead of the video's full resolution, and the frame buffer has a memory ceiling. On a 4K stream this was previously hundreds of megabytes.</li>
+            <li>Fix: Removed a console error (<code class="text-cyan-400">chrome-extension://invalid/ net::ERR_FAILED</code>) that appeared on every page, with the extension both on and off, and a blocking request that came with it.</li>
+            <li>Change: If you had set "Max buffer" to trim buffered video, this update turns it off. That setting is what caused the quality drop and part of the freeze above, so leaving it as it was would have meant installing the fix and still having the bug. It's the only setting this update changes, and you can set it back in Settings.</li>
+          </ul>
+
+          <h3 class="text-lg text-white font-semibold font-['Space_Mono'] mt-6 mb-3">Performance</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-300 text-sm leading-relaxed">
+            <li>Improvement: With LagSync switched off, it now does essentially nothing. The periodic scanner, the DOM observer, and the media-pipeline hooks all stand down instead of running and returning early on every page you open.</li>
+            <li>Improvement: Frames with no video — ads, embeds, player chrome — no longer open a connection to the extension's background worker or run a stats timer.</li>
+            <li>Fix: Dragging the delay slider no longer writes to synced storage on every pixel of movement, which could exceed the browser's write quota and cause later setting changes to be silently dropped.</li>
+          </ul>
+        </section>
+
         <section class="p-8 bg-[#111] border border-white/5 rounded-2xl">
           <div id="v122" class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
             <h2 class="text-2xl text-white font-bold font-['Space_Mono']">1.2.2</h2>
