@@ -25,7 +25,7 @@ export const BROWSERS = [
   {
     name: 'Firefox',
     icon: '/browsers/firefox.svg',
-    note: `v1.3.1 — Live`,
+    note: `v1.3.1 — Live · v1.4.0 in review`,
     link: 'https://addons.mozilla.org/en-US/firefox/addon/lagsync-bluetooth-audio-fix/',
   },
   {
