@@ -3,8 +3,10 @@
  * the Astro build, never in the visitor's browser). Each store exposes a
  * different metric (Chrome: weekly users, Edge: active installs, Firefox:
  * average daily users); the sum is a conservative "users" figure because the
- * Chrome number alone is a floor ("2,000 users" means >= 2,000). Safari has
- * no public count and is omitted.
+ * Chrome number alone is a floor ("2,000 users" means >= 2,000). Safari is
+ * omitted because Apple publishes no install count at all (checked via the
+ * iTunes lookup API, 2026-08-17) — the displayed total is therefore an
+ * undercount, which is the safe direction.
  *
  * Every fetch has a hardcoded fallback (last manually-verified 2026-08-17)
  * so an API hiccup can never break the build or inflate the number.
