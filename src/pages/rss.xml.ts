@@ -8,7 +8,7 @@ const items = [
     link: `${SITE}/releases#v140`,
     pubDate: 'Sun, 16 Aug 2026 00:00:00 GMT',
     description:
-      'Send a bug report from inside LagSync (Chrome, Edge): you see the exact technical data before it goes out — hostname only, never the full address. Anonymous by default, optional email only if you want a reply. Everything else still runs 100% on-device.'
+      'Live on Chrome and Edge. Send a bug report from inside LagSync with a full payload preview — hostname only, never the full address. Anonymous by default, optional email only if you want a reply. Everything else still runs 100% on-device.'
   },
   {
     title: 'LagSync 1.3.1 Released',
