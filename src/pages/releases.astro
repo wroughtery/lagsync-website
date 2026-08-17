@@ -14,11 +14,39 @@ import Footer from '../components/Footer.astro';
 
       <div class="space-y-8">
         <section class="p-8 bg-[#111] border border-cyan-500/30 rounded-2xl">
+          <div id="v140" class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+            <h2 class="text-2xl text-white font-bold font-['Space_Mono']">1.4.0</h2>
+            <span class="text-xs text-slate-400 font-['Space_Mono'] uppercase tracking-widest">2026-08-16</span>
+          </div>
+          <p class="text-xs text-cyan-400 font-['Space_Mono'] uppercase tracking-widest mb-6">Live on Edge. In review on Chrome — updates automatically once approved. Firefox and Safari follow later.</p>
+
+          <h3 class="text-lg text-white font-semibold font-['Space_Mono'] mt-2 mb-3">Feedback (Chrome, Edge)</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-300 text-sm leading-relaxed">
+            <li>Feature: Send a bug report from inside LagSync. When playback looks stuck you'll see a "Send a report" link (also always available under Settings &rarr; Report a problem). You see the exact technical data before it's sent &mdash; what site (hostname only, never the full address or title), which browser, and what the delay engine was doing. Nothing is sent until you press Send.</li>
+            <li>Privacy: reports are anonymous by default. There's an optional email field if you'd like an answer &mdash; it's used only to reply to your report, and it's the only personal data a report can contain. This is the first LagSync feature that transmits anything; everything else still runs 100% on-device. See the updated <a href="/privacy/" class="text-cyan-400 hover:text-cyan-300">privacy policy</a>.</li>
+          </ul>
+        </section>
+
+        <section class="p-8 bg-[#111] border border-white/5 rounded-2xl">
+          <div id="v131" class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+            <h2 class="text-2xl text-white font-bold font-['Space_Mono']">1.3.1</h2>
+            <span class="text-xs text-slate-400 font-['Space_Mono'] uppercase tracking-widest">2026-08-15</span>
+          </div>
+          <p class="text-xs text-slate-400 font-['Space_Mono'] uppercase tracking-widest mb-6">Ships to Chrome and Edge as part of 1.4.0.</p>
+
+          <h3 class="text-lg text-white font-semibold font-['Space_Mono'] mt-2 mb-3">Playback</h3>
+          <ul class="list-disc pl-5 space-y-2 text-slate-300 text-sm leading-relaxed">
+            <li>Fix (Chrome, Edge): rare freeze or backward jump on YouTube and Vimeo when playback reached a delay-change discontinuity &mdash; typically some seconds after turning the delay on, changing it, or turning it off mid-video. The discontinuity is now crossed before playback can hit it, recovery stays armed even after the delay is switched off, and a watchdog restarts the decoder if playback wedges anyway. Verified across 40+ stress cycles on real YouTube, including ads, seeks, pauses, and on/off toggling.</li>
+            <li>Firefox is unaffected by both the bug and the change &mdash; its media engine coasts over these discontinuities natively.</li>
+          </ul>
+        </section>
+
+        <section class="p-8 bg-[#111] border border-white/5 rounded-2xl">
           <div id="v130" class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
             <h2 class="text-2xl text-white font-bold font-['Space_Mono']">1.3.0</h2>
             <span class="text-xs text-slate-400 font-['Space_Mono'] uppercase tracking-widest">2026-08-05</span>
           </div>
-          <p class="text-xs text-cyan-400 font-['Space_Mono'] uppercase tracking-widest mb-6">Live now on Firefox. Chrome, Edge, Safari, and Brave update automatically once their store review finishes.</p>
+          <p class="text-xs text-slate-400 font-['Space_Mono'] uppercase tracking-widest mb-6">Live on Firefox. Chrome and Edge receive these changes bundled into 1.4.0.</p>
 
           <h3 class="text-lg text-white font-semibold font-['Space_Mono'] mt-2 mb-3">Permissions and privacy</h3>
           <ul class="list-disc pl-5 space-y-2 text-slate-300 text-sm leading-relaxed">

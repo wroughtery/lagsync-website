@@ -6,11 +6,32 @@ import Features from '../components/Features.astro';
 import BrowserLinks from '../components/BrowserLinks.astro';
 import Screenshots from '../components/Screenshots.astro';
 import Footer from '../components/Footer.astro';
+import { USER_COUNT_FLOOR } from '../lib/userCount';
+
+// SEO: SoftwareApplication structured data. interactionStatistic carries the
+// build-time cross-store install count (see src/lib/userCount.ts — real
+// numbers fetched from the stores, never hand-written).
+const appJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'LagSync - Bluetooth Audio Fix',
+  operatingSystem: 'Chrome, Edge, Firefox, Safari, Brave',
+  applicationCategory: 'BrowserApplication',
+  description: SITE.description,
+  url: SITE.url,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  interactionStatistic: {
+    '@type': 'InteractionCounter',
+    interactionType: 'https://schema.org/InstallAction',
+    userInteractionCount: USER_COUNT_FLOOR,
+  },
+};
 ---
 
 <Layout title={SITE.title}
 		description={SITE.description}
 		image={SITE.image}>
+	<script type="application/ld+json" set:html={JSON.stringify(appJsonLd)} />
 	<main class="flex-grow bg-[#080808]">
 		<Hero />
 		<BrowserLinks />

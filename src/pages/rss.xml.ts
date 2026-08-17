@@ -4,6 +4,13 @@ const SITE = 'https://lagsync.com';
 
 const items = [
   {
+    title: 'LagSync 1.4.0 Released',
+    link: `${SITE}/releases#v140`,
+    pubDate: 'Sun, 16 Aug 2026 00:00:00 GMT',
+    description:
+      'Live on Edge, in review on Chrome. Fixes a rare freeze/backward jump when playback crossed a delay discontinuity, and adds an optional in-extension bug report with a full payload preview - anonymous by default, optional email only if you want a reply.'
+  },
+  {
     title: 'LagSync 1.3.0 Released',
     link: `${SITE}/releases#v130`,
     pubDate: 'Wed, 05 Aug 2026 00:00:00 GMT',

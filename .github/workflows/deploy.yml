@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Weekly rebuild so the build-time cross-store user count stays fresh.
+    - cron: '0 6 * * 1'
 
 permissions:
   contents: read
