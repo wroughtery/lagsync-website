@@ -10,7 +10,10 @@ export const SITE = {
   url: 'https://lagsync.com',
 };
 
-export const VERSION = '1.2.2';
+export const VERSION = '1.4.0';
+
+// Safari lags behind — App Store review; last shipped Safari build.
+export const SAFARI_VERSION = '1.2.2';
 
 export const BROWSERS = [
   {
@@ -34,7 +37,7 @@ export const BROWSERS = [
   {
     name: 'Safari',
     icon: '/browsers/safari.svg',
-    note: `v${VERSION} — Live`,
+    note: `v${SAFARI_VERSION} — Live`,
     link: 'https://apps.apple.com/app/id6766511020',
   },
   {
