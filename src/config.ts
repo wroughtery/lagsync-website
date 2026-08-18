@@ -10,7 +10,7 @@ export const SITE = {
   url: 'https://lagsync.com',
 };
 
-export const VERSION = '1.4.0';
+export const VERSION = '1.4.1';
 
 // Per-store versions can lag behind each other while a release rolls out
 // (store review times differ). Keep each entry's version accurate to what
@@ -25,13 +25,13 @@ export const BROWSERS = [
   {
     name: 'Firefox',
     icon: '/browsers/firefox.svg',
-    note: `v1.3.1 — Live · v1.4.0 in review`,
+    note: `v${VERSION} — Live`,
     link: 'https://addons.mozilla.org/en-US/firefox/addon/lagsync-bluetooth-audio-fix/',
   },
   {
     name: 'Edge',
     icon: '/browsers/edge.svg',
-    note: `v1.4.0 — Live`,
+    note: `v1.4.0 — Live · v1.4.1 in review`,
     link: 'https://microsoftedge.microsoft.com/addons/detail/lagsync-bluetooth-audio/ocigopodjjobggdnklngfaceeedlkbol',
   },
   {

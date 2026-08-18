@@ -4,6 +4,13 @@ const SITE = 'https://lagsync.com';
 
 const items = [
   {
+    title: 'LagSync 1.4.1 Released',
+    link: `${SITE}/releases#v141`,
+    pubDate: 'Mon, 17 Aug 2026 00:00:00 GMT',
+    description:
+      'Fix: web-component players (BBC iPlayer, bbc.com and others) keep their video inside shadow DOM where LagSync could not see it — the popup said "No video detected" with a video playing. LagSync now finds these videos on every site. The popup also says clearly when a site simply is not added yet.'
+  },
+  {
     title: 'LagSync 1.4.0 Released',
     link: `${SITE}/releases#v140`,
     pubDate: 'Sun, 16 Aug 2026 00:00:00 GMT',
@@ -61,7 +68,7 @@ export const GET: APIRoute = () => {
     `  <link>${SITE}/releases</link>\n` +
     `  <description>Release and changelog updates for LagSync.</description>\n` +
     `  <language>en-us</language>\n` +
-      `  <lastBuildDate>Sun, 16 Aug 2026 00:00:00 GMT</lastBuildDate>\n` +
+      `  <lastBuildDate>Mon, 17 Aug 2026 00:00:00 GMT</lastBuildDate>\n` +
     items
       .map(
         (item) =>
